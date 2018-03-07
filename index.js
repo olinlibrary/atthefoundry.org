@@ -6,8 +6,21 @@ $(document).ready(function(){
     // initial setup
     // - video autoplay on/off
     // - audio muted/unmuted
-    var isVideoAutoplay = true;
-    var isAuidoMuted = true;
+    var isVideoAutoplay;
+    var isAudioMuted;
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        // You are in mobile browser, so yes Vimeo UI
+        console.log("on mobile")
+        $('#vi-banner-video').attr('src', 'https://player.vimeo.com/video/256985667?background=0&autoplay=0&loop=1&byline=0&title=0');
+        isVideoAutoplay = false;
+        isAuidoMuted = true;
+    }
+    else{
+        // for desktop, no Vimeo UI
+        console.log("on desktop")
+        isVideoAutoplay = true;
+        isAuidoMuted = true;
+    }
 
     if ( isVideoAutoplay === true ){
       $('#vi-video-1-container').attr('data-video-is-playing', true);

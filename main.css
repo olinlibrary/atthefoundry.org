@@ -36,9 +36,10 @@ a.play-pause-button {
   @media (min-width: 300px) and (max-width: 649px) {
     .video-control {
       left: 3%; } }
-  @media (min-width: 650px) and (max-width: 1023px) {
+  @media (min-width: 650px) and (max-width: 1024px) {
     .video-control {
-      left: 3%; } }
+      left: 3%;
+      bottom: 1vh; } }
   .video-control:hover {
     opacity: 1; }
   .video-control:before, .video-control:after {
@@ -50,6 +51,12 @@ a.play-pause-button {
     background-size: 100%;
     display: block;
     position: absolute; }
+    @media (min-width: 300px) and (max-width: 649px) {
+      .video-control:before, .video-control:after {
+        max-width: 100px; } }
+    @media (min-width: 650px) and (max-width: 1024px) {
+      .video-control:before, .video-control:after {
+        max-width: 100px; } }
   .video-control:before {
     background-image: url("./assets/video-buttons-black-play.png"); }
   .video-control:after {
@@ -73,10 +80,11 @@ a.play-pause-button {
   z-index: 999; }
   @media (min-width: 300px) and (max-width: 649px) {
     .audio-control {
-      left: 18%; } }
-  @media (min-width: 650px) and (max-width: 1023px) {
+      left: 15%; } }
+  @media (min-width: 650px) and (max-width: 1024px) {
     .audio-control {
-      left: 10%; } }
+      left: 15%;
+      bottom: 1vh; } }
   .audio-control:hover {
     opacity: 1; }
   .audio-control:before, .audio-control:after {
@@ -88,6 +96,12 @@ a.play-pause-button {
     background-repeat: no-repeat;
     background-size: 100%;
     display: block; }
+    @media (min-width: 300px) and (max-width: 649px) {
+      .audio-control:before, .audio-control:after {
+        max-width: 100px; } }
+    @media (min-width: 650px) and (max-width: 1024px) {
+      .audio-control:before, .audio-control:after {
+        max-width: 100px; } }
   .audio-control:before {
     background-image: url("./assets/video-buttons-black-on.png"); }
   .audio-control:after {
