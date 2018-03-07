@@ -8,18 +8,22 @@ $(document).ready(function(){
     // - audio muted/unmuted
     var isVideoAutoplay;
     var isAudioMuted;
+    $("#vi-banner-video").on("play", function(){
+        console.log( "Vimeo is ready!" );
+        $("#vi-banner-video").vimeo("setVolume", 0);
+    });
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         // You are in mobile browser, so yes Vimeo UI
         console.log("on mobile")
-        $('#vi-banner-video').attr('src', 'https://player.vimeo.com/video/256985667?background=0&autoplay=0&loop=1&byline=0&title=0');
+        $('#vi-banner-video').attr('src', 'https://player.vimeo.com/video/256985667?background=0&autoplay=0&loop=0&byline=0&playsinline=1&title=0');
         isVideoAutoplay = false;
-        isAuidoMuted = true;
+        isAudioMuted = true;
     }
     else{
         // for desktop, no Vimeo UI
         console.log("on desktop")
         isVideoAutoplay = true;
-        isAuidoMuted = true;
+        isAudioMuted = true;
     }
 
     if ( isVideoAutoplay === true ){
@@ -34,7 +38,7 @@ $(document).ready(function(){
       $('.video-control.js-video-control.paused').addClass("video-control-show");
     }
 
-    if ( isAuidoMuted === true ){
+    if ( isAudioMuted === true ){
       $('#vi-video-1-container').attr('data-audio-volume', 0);
       $("#vi-banner-video").vimeo("setVolume", 0);
       $(".audio-control.js-audio-control").removeClass('unmuted').addClass('muted');
