@@ -1,18 +1,19 @@
+html {
+    height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: #333;
+  height: inherit;
 }
 
 main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-article {
-  color: #fff;
-  text-align: center;
+  height: inherit;
 }
 
 article {
@@ -21,11 +22,18 @@ article {
   margin: auto;
 }
 
+iframe.video {
+  width: 90vw;
+  height: 50.625vw;
+  max-width: 640px;
+  max-height: 360px;
+}
+
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 4em;
   letter-spacing: 0.15em;
-  margin-bottom: 0;
+  margin: 0.25em;
 }
 
 p {
@@ -37,3 +45,9 @@ p {
 a {
   color: #fff;
 }
+
+/* @media (max-width: 720px) {
+  h1 {
+    font-size: 2em;
+  }
+} */
