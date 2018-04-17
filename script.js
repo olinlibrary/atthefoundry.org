@@ -17,6 +17,11 @@ function setBackgroundColor(color) {
   document.body.style.background = color;
 }
 
+function setBackgroundGradient(color) {
+  gradient = "linear-gradient("+color+",#333)";
+  document.body.style.background = gradient;
+}
+
 async function loopThroughColors() {
   for (var i = 0; i < COLORS.length; i++) {
     setBackgroundColor(COLORS[i]);
